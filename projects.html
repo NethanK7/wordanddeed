@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Programs | Word & Deed Lanka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0D1B2A', 'navy-light': '#162436',
+            gold: '#C8963E', 'gold-light': '#E0B060',
+            green: '#2A7A4E', 'green-light': '#348A5C',
+            cream: '#F8F5EF',
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1A1A1A; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #C8963E; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .tab-btn.active { background: #0D1B2A; color: white; }
+    .program-section { display: none; }
+    .program-section.active { display: block; }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <div class="bg-navy text-white text-xs py-2 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span><i class="fas fa-phone mr-2 text-gold"></i>011 236 1042 &nbsp;|&nbsp; <i class="fas fa-envelope mr-2 text-gold"></i>info@wdlk.org</span>
+      <div class="flex items-center gap-4">
+        <a href="https://facebook.com" class="hover:text-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" class="hover:text-gold transition-colors"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
+          <span class="text-gold font-playfair font-bold text-lg">WD</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-playfair font-bold text-navy text-lg leading-none">Word &amp; Deed</div>
+          <div class="text-xs text-gold tracking-widest uppercase font-medium">Lanka</div>
+        </div>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">About Us</a></li>
+        <li><a href="projects.html" class="nav-link text-gold font-medium text-sm">Our Work</a></li>
+        <li><a href="history.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">History</a></li>
+        <li><a href="highlights.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Highlights</a></li>
+        <li><a href="contact.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="bg-gold hover:bg-gold-light text-white px-6 py-2.5 text-sm font-semibold tracking-wide transition-colors rounded-sm">Donate Now</a>
+        <button class="lg:hidden text-navy text-xl p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t px-4 py-4">
+      <ul class="space-y-3">
+        <li><a href="index.html" class="block text-navy font-medium py-2 border-b border-gray-50">Home</a></li>
+        <li><a href="about.html" class="block text-navy font-medium py-2 border-b border-gray-50">About Us</a></li>
+        <li><a href="projects.html" class="block text-gold font-medium py-2 border-b border-gray-50">Our Work</a></li>
+        <li><a href="history.html" class="block text-navy font-medium py-2 border-b border-gray-50">History</a></li>
+        <li><a href="highlights.html" class="block text-navy font-medium py-2 border-b border-gray-50">Highlights</a></li>
+        <li><a href="contact.html" class="block text-navy font-medium py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative h-72 md:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80')">
+    <div class="absolute inset-0 bg-navy/80"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+      <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">What We Do</span>
+      <h1 class="font-playfair text-4xl md:text-6xl font-bold text-white mb-4">Our Programs &amp; Projects</h1>
+      <nav class="text-gray-300 text-sm flex items-center gap-2">
+        <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-gold">Our Work</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">Holistic Transformation</span>
+      <h2 class="font-playfair text-4xl font-bold text-navy mb-6">Addressing Every Dimension of Human Need</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">Word &amp; Deed Lanka approaches community development holistically — recognising that lasting transformation must address the spiritual, physical, educational, and social needs of every person we serve.</p>
+    </div>
+  </section>
+
+  <!-- Program Tabs -->
+  <section class="py-4 bg-white border-b border-gray-100 sticky top-20 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button onclick="showProgram('education')" class="tab-btn active px-6 py-2.5 rounded-sm font-semibold text-sm transition-all border border-gray-200 hover:bg-navy hover:text-white hover:border-navy" id="tab-education">
+          <i class="fas fa-graduation-cap mr-2"></i>Education
+        </button>
+        <button onclick="showProgram('nutrition')" class="tab-btn px-6 py-2.5 rounded-sm font-semibold text-sm transition-all border border-gray-200 hover:bg-navy hover:text-white hover:border-navy text-navy" id="tab-nutrition">
+          <i class="fas fa-apple-alt mr-2"></i>Nutrition
+        </button>
+        <button onclick="showProgram('leadership')" class="tab-btn px-6 py-2.5 rounded-sm font-semibold text-sm transition-all border border-gray-200 hover:bg-navy hover:text-white hover:border-navy text-navy" id="tab-leadership">
+          <i class="fas fa-users mr-2"></i>Leadership
+        </button>
+        <button onclick="showProgram('evangelism')" class="tab-btn px-6 py-2.5 rounded-sm font-semibold text-sm transition-all border border-gray-200 hover:bg-navy hover:text-white hover:border-navy text-navy" id="tab-evangelism">
+          <i class="fas fa-cross mr-2"></i>Evangelism
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program: Education -->
+  <section id="prog-education" class="program-section active py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-3 bg-gold/10 px-4 py-2 rounded-full mb-6">
+          <i class="fas fa-graduation-cap text-gold"></i>
+          <span class="text-gold text-sm font-semibold tracking-wide">Program 01</span>
+        </div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-6">Education</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5">Education is the foundation of long-term transformation. Word &amp; Deed Lanka runs early learning centres and after-school programs in communities where children would otherwise grow up without access to quality schooling.</p>
+        <p class="text-gray-600 leading-relaxed mb-8">Each programme pairs academic content with values-based character formation — ensuring children develop not just intellectually, but as confident, purpose-driven young people. In June 2023 alone, a new school in Matton opened doors to 150 children with a full Christian curriculum and daily meal programme.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-gold">150+</div>
+            <div class="text-gray-500 text-sm">Children in new Matton school</div>
+          </div>
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-gold">400+</div>
+            <div class="text-gray-500 text-sm">Villages with educational presence</div>
+          </div>
+        </div>
+        <ul class="space-y-3 text-gray-600 text-sm mb-8">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>Early childhood learning centres</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>After-school tutoring and homework support</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>Christian values integration in curriculum</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>Daily meal programmes at learning centres</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>Vacation Bible School movement islandwide</li>
+        </ul>
+        <a href="donate.html" class="inline-flex items-center gap-2 bg-gold text-white px-8 py-4 font-semibold hover:bg-gold-light transition-colors rounded-sm">
+          Support Education <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education program" class="rounded-lg shadow-2xl w-full h-[480px] object-cover" />
+        <div class="absolute -bottom-6 -left-6 bg-navy text-white p-6 rounded-sm shadow-xl hidden md:block">
+          <div class="font-playfair text-2xl font-bold text-gold">Since 1975</div>
+          <div class="text-sm text-gray-300 mt-1">The Good News Club — the seed of our education work</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program: Nutrition -->
+  <section id="prog-nutrition" class="program-section py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+      <div class="order-2 md:order-1 relative">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Nutrition program" class="rounded-lg shadow-2xl w-full h-[480px] object-cover" />
+        <div class="absolute -bottom-6 -right-6 bg-green text-white p-6 rounded-sm shadow-xl hidden md:block">
+          <div class="font-playfair text-2xl font-bold text-white">Zero Hunger</div>
+          <div class="text-sm text-green-100 mt-1">Our goal for every community we serve</div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="inline-flex items-center gap-3 bg-green/10 px-4 py-2 rounded-full mb-6">
+          <i class="fas fa-apple-alt text-green"></i>
+          <span class="text-green text-sm font-semibold tracking-wide">Program 02</span>
+        </div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-6">Nutrition</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5">Hunger is both a physical and spiritual crisis. A hungry child cannot learn; a hungry family cannot thrive. Word &amp; Deed Lanka's nutrition programme addresses immediate food insecurity while building sustainable food systems within communities.</p>
+        <p class="text-gray-600 leading-relaxed mb-8">Through meal programmes at schools and community centres, nutritional education, and sustainable food distribution, we ensure that no child in our network goes to bed hungry — or spiritually empty.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-green">Daily</div>
+            <div class="text-gray-500 text-sm">Meals served at partner schools</div>
+          </div>
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-green">60K+</div>
+            <div class="text-gray-500 text-sm">Children reached through feeding</div>
+          </div>
+        </div>
+        <ul class="space-y-3 text-gray-600 text-sm mb-8">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green mt-0.5 flex-shrink-0"></i>Daily meal programmes at learning centres</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green mt-0.5 flex-shrink-0"></i>Sustainable food distribution in rural areas</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green mt-0.5 flex-shrink-0"></i>Nutritional education for parents and caregivers</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green mt-0.5 flex-shrink-0"></i>Community gardens and food security training</li>
+        </ul>
+        <a href="donate.html" class="inline-flex items-center gap-2 bg-green text-white px-8 py-4 font-semibold hover:bg-green-light transition-colors rounded-sm">
+          Feed a Child <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program: Leadership -->
+  <section id="prog-leadership" class="program-section py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-full mb-6">
+          <i class="fas fa-users text-blue-600"></i>
+          <span class="text-blue-600 text-sm font-semibold tracking-wide">Program 03</span>
+        </div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-6">Leadership</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5">Sustainable transformation requires leaders raised up from within communities themselves. Word &amp; Deed Lanka's leadership programme identifies, mentors, and trains the next generation of community leaders, pastors, and change-makers across Sri Lanka.</p>
+        <p class="text-gray-600 leading-relaxed mb-8">In January 2023, thirty-five church leaders completed a six-month discipleship programme — each returning to their congregations equipped to multiply their impact. These men and women don't just attend communities; they lead them into flourishing.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-blue-600">35</div>
+            <div class="text-gray-500 text-sm">Leaders graduated in 2023</div>
+          </div>
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-blue-600">6mo</div>
+            <div class="text-gray-500 text-sm">Intensive discipleship programme</div>
+          </div>
+        </div>
+        <ul class="space-y-3 text-gray-600 text-sm mb-8">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-0.5 flex-shrink-0"></i>Mentor-based leadership training</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-0.5 flex-shrink-0"></i>Six-month intensive discipleship programmes</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-0.5 flex-shrink-0"></i>Clergy and church leader development</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-0.5 flex-shrink-0"></i>Youth leadership identification and training</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-0.5 flex-shrink-0"></i>Community organising and advocacy skills</li>
+        </ul>
+        <a href="donate.html" class="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 font-semibold hover:bg-navy-light transition-colors rounded-sm">
+          Invest in Leaders <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80" alt="Leadership program" class="rounded-lg shadow-2xl w-full h-[480px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Program: Evangelism -->
+  <section id="prog-evangelism" class="program-section py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+      <div class="order-2 md:order-1 relative">
+        <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800&q=80" alt="Evangelism program" class="rounded-lg shadow-2xl w-full h-[480px] object-cover" />
+        <div class="absolute -bottom-6 -right-6 bg-gold text-white p-6 rounded-sm shadow-xl hidden md:block">
+          <div class="font-playfair text-2xl font-bold text-white">10,000</div>
+          <div class="text-sm text-white/80 mt-1">Bibles distributed in 2023 alone</div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="inline-flex items-center gap-3 bg-amber-50 px-4 py-2 rounded-full mb-6">
+          <i class="fas fa-cross text-amber-600"></i>
+          <span class="text-amber-600 text-sm font-semibold tracking-wide">Program 04</span>
+        </div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-6">Evangelism</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5">At the heart of Word &amp; Deed Lanka's work is a conviction that every person deserves to hear the good news of Jesus Christ — in their own language, in a way they can understand, through relationships of genuine love.</p>
+        <p class="text-gray-600 leading-relaxed mb-8">In March 2023, 10,000 local-language Bibles were distributed to rural communities across Sri Lanka. These weren't just books — they were seeds of faith, planted in the hands of men and women who had never held God's Word in their mother tongue.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-amber-600">10K</div>
+            <div class="text-gray-500 text-sm">Scriptures distributed in 2023</div>
+          </div>
+          <div class="bg-cream rounded-lg p-4">
+            <div class="font-playfair text-3xl font-bold text-amber-600">60K+</div>
+            <div class="text-gray-500 text-sm">Children introduced to the Gospel</div>
+          </div>
+        </div>
+        <ul class="space-y-3 text-gray-600 text-sm mb-8">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-0.5 flex-shrink-0"></i>Local-language Bible distribution</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-0.5 flex-shrink-0"></i>Vacation Bible School programmes</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-0.5 flex-shrink-0"></i>Community-based Gospel outreach</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-0.5 flex-shrink-0"></i>Church planting support in rural areas</li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-0.5 flex-shrink-0"></i>Faith-based family counselling</li>
+        </ul>
+        <a href="donate.html" class="inline-flex items-center gap-2 bg-gold text-white px-8 py-4 font-semibold hover:bg-gold-light transition-colors rounded-sm">
+          Share the Word <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-20 bg-navy">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-white">Our Collective Impact</h2>
+        <p class="text-gray-400 mt-4">Across all four programmes, together we are transforming Sri Lanka.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">60,000+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Children Reached</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">400+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Villages Served</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">10,000</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Bibles Distributed</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">35+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Leaders Trained</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate CTA -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-playfair text-4xl font-bold text-navy mb-4">Your Gift Fuels Every Program</h2>
+      <p class="text-gray-500 text-lg mb-8">Whether you give toward education, nutrition, leadership, or evangelism — every donation directly changes lives across Sri Lanka.</p>
+      <a href="donate.html" class="inline-block bg-gold text-white px-10 py-4 font-bold text-lg hover:bg-gold-light transition-colors rounded-sm">Give Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
+              <span class="text-gold font-playfair font-bold text-lg">WD</span>
+            </div>
+            <div>
+              <div class="font-playfair font-bold text-white text-lg leading-none">Word &amp; Deed</div>
+              <div class="text-xs text-gold tracking-widest uppercase">Lanka</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Empowering communities across Sri Lanka through God's Word and practical action since 1972.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-instagram text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-youtube text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Our Programs</a></li>
+            <li><a href="history.html" class="hover:text-gold transition-colors">Our History</a></li>
+            <li><a href="highlights.html" class="hover:text-gold transition-colors">Highlights</a></li>
+            <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Our Programs</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Education</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Nutrition</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Leadership</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Evangelism</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Contact</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-phone text-gold mt-0.5 flex-shrink-0"></i><span>011 236 1042</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-envelope text-gold mt-0.5 flex-shrink-0"></i><span>info@wdlk.org</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-gold mt-0.5 flex-shrink-0"></i><span>Colombo Centre, Sri Lanka</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs">
+        <span>© 2025 Word &amp; Deed Lanka. All rights reserved.</span>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-gold transition-colors">Terms of Use</a>
+          <a href="#" class="hover:text-gold transition-colors">Financial Accountability</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showProgram(name) {
+      document.querySelectorAll('.program-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.classList.add('text-navy'); });
+      document.getElementById('prog-' + name).classList.add('active');
+      document.getElementById('tab-' + name).classList.add('active');
+      document.getElementById('tab-' + name).classList.remove('text-navy');
+    }
+  </script>
+</body>
+</html>

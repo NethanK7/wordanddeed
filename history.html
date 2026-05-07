@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our History | Word & Deed Lanka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0D1B2A', 'navy-light': '#162436',
+            gold: '#C8963E', 'gold-light': '#E0B060',
+            green: '#2A7A4E', 'green-light': '#348A5C',
+            cream: '#F8F5EF',
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1A1A1A; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #C8963E; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    /* Timeline */
+    .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C8963E, #0D1B2A); transform: translateX(-50%); }
+    .timeline-dot { position: absolute; left: 50%; transform: translateX(-50%); }
+    @media (max-width: 768px) {
+      .timeline-line { left: 28px; }
+      .timeline-dot { left: 28px; }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <div class="bg-navy text-white text-xs py-2 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span><i class="fas fa-phone mr-2 text-gold"></i>011 236 1042 &nbsp;|&nbsp; <i class="fas fa-envelope mr-2 text-gold"></i>info@wdlk.org</span>
+      <div class="flex items-center gap-4">
+        <a href="https://facebook.com" class="hover:text-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" class="hover:text-gold transition-colors"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
+          <span class="text-gold font-playfair font-bold text-lg">WD</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-playfair font-bold text-navy text-lg leading-none">Word &amp; Deed</div>
+          <div class="text-xs text-gold tracking-widest uppercase font-medium">Lanka</div>
+        </div>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">About Us</a></li>
+        <li><a href="projects.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Our Work</a></li>
+        <li><a href="history.html" class="nav-link text-gold font-medium text-sm">History</a></li>
+        <li><a href="highlights.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Highlights</a></li>
+        <li><a href="contact.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="bg-gold hover:bg-gold-light text-white px-6 py-2.5 text-sm font-semibold tracking-wide transition-colors rounded-sm">Donate Now</a>
+        <button class="lg:hidden text-navy text-xl p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t px-4 py-4">
+      <ul class="space-y-3">
+        <li><a href="index.html" class="block text-navy font-medium py-2 border-b border-gray-50">Home</a></li>
+        <li><a href="about.html" class="block text-navy font-medium py-2 border-b border-gray-50">About Us</a></li>
+        <li><a href="projects.html" class="block text-navy font-medium py-2 border-b border-gray-50">Our Work</a></li>
+        <li><a href="history.html" class="block text-gold font-medium py-2 border-b border-gray-50">History</a></li>
+        <li><a href="highlights.html" class="block text-navy font-medium py-2 border-b border-gray-50">Highlights</a></li>
+        <li><a href="contact.html" class="block text-navy font-medium py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative h-72 md:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1501862700950-18382cd41497?w=1920&q=80')">
+    <div class="absolute inset-0 bg-navy/80"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+      <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Our Journey</span>
+      <h1 class="font-playfair text-4xl md:text-6xl font-bold text-white mb-4">50 Years of Faithful Service</h1>
+      <nav class="text-gray-300 text-sm flex items-center gap-2">
+        <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-gold">History</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">The Beginning</span>
+      <h2 class="font-playfair text-4xl font-bold text-navy mb-6">A Garage, Thirty Children, and a Conviction</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">In 1972, Cynthia and Alfred Devadason encountered hundreds of families living as squatters along the canal banks of Colombo. Children roamed the streets with no school to attend, no safe place to grow. Rather than look away, the Devadasons opened their rented garage — and a movement was born.</p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="relative">
+        <!-- Vertical line (desktop) -->
+        <div class="hidden md:block timeline-line"></div>
+
+        <!-- Timeline Items -->
+        <!-- 1972 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 md:text-right md:pr-16 pl-14 md:pl-0">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-gold text-xs font-semibold tracking-widest uppercase">The Beginning</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1972 — First Steps</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Cynthia and Alfred Devadason witness hundreds of families living as squatters along Colombo's canal banks. Children roam the streets with no schooling, no future. The burden to act becomes impossible to ignore.</p>
+            </div>
+          </div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-gold text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1972</div>
+          <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          <!-- Mobile dot -->
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">72</div>
+        </div>
+
+        <!-- 1975 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 hidden md:block"></div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-navy text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1975</div>
+          <div class="md:w-1/2 md:pl-16 pl-14">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-gold text-xs font-semibold tracking-widest uppercase">The Good News Club</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1975 — A Garage Becomes a School</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Operating from a rented garage, the Devadasons launch "The Good News Club" for thirty canal bank children. This initiative sparks The Lanka Vacation Bible School Movement — a flame that spreads across the island.</p>
+            </div>
+          </div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">75</div>
+        </div>
+
+        <!-- 1978 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 md:text-right md:pr-16 pl-14 md:pl-0">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-green text-xs font-semibold tracking-widest uppercase">First Fruits</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1978 — A Community Transforms</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Nine families become believers and are baptised. Over the following decade, the entire community sees housing improvements, employment gains, and strengthened family structures. The proof of holistic transformation is undeniable.</p>
+            </div>
+          </div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-green text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1978</div>
+          <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-green text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">78</div>
+        </div>
+
+        <!-- 1983 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 hidden md:block"></div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-gold text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1983</div>
+          <div class="md:w-1/2 md:pl-16 pl-14">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-gold text-xs font-semibold tracking-widest uppercase">Through Adversity</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1983 — Resilience After the Riots</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Ethnic riots destroy surrounding buildings. Rather than retreat, the ministry acquires a damaged property — a statement of faith and commitment to the communities they serve. Rebuilding begins immediately.</p>
+            </div>
+          </div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">83</div>
+        </div>
+
+        <!-- 1985 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 md:text-right md:pr-16 pl-14 md:pl-0">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-navy text-xs font-semibold tracking-widest uppercase">Official Recognition</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1985 — Government Registration</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Word &amp; Deed Lanka is formally registered as a Social Service Organisation, receiving government approval. This milestone opens doors to wider reach and greater accountability to the communities served.</p>
+            </div>
+          </div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-navy text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1985</div>
+          <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">85</div>
+        </div>
+
+        <!-- 1987 -->
+        <div class="relative mb-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 hidden md:block"></div>
+          <div class="timeline-dot hidden md:flex w-12 h-12 rounded-full bg-green text-white items-center justify-center font-playfair font-bold text-sm shadow-lg z-10 flex-shrink-0">1987</div>
+          <div class="md:w-1/2 md:pl-16 pl-14">
+            <div class="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-green text-xs font-semibold tracking-widest uppercase">The Colombo Centre</span>
+              <h3 class="font-playfair text-2xl font-bold text-navy mt-1 mb-3">1987 — A Permanent Home</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">With generous support from Woord en Daad (Holland), the rebuilt Colombo Centre opens to serve 300+ children. A permanent base is established — from which the work can multiply across the island.</p>
+            </div>
+          </div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-green text-white flex items-center justify-center font-playfair font-bold text-xs shadow-lg">87</div>
+        </div>
+
+        <!-- Today -->
+        <div class="relative mb-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="md:w-1/2 md:text-right md:pr-16 pl-14 md:pl-0">
+            <div class="bg-navy rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-gold text-xs font-semibold tracking-widest uppercase">The Work Continues</span>
+              <h3 class="font-playfair text-2xl font-bold text-white mt-1 mb-3">Today — Growing Deeper</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">CEO Timothy Daniel leads Word &amp; Deed Lanka into new communities and new chapters. 60,000+ children reached, 400+ villages served — and the conviction that every life matters burns just as brightly as it did in a garage in Colombo fifty years ago.</p>
+              <a href="donate.html" class="inline-flex items-center gap-2 text-gold text-sm font-semibold mt-4 hover:underline">Support the Next Chapter <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="timeline-dot hidden md:flex w-14 h-14 rounded-full bg-gold text-white items-center justify-center font-playfair font-bold text-sm shadow-xl z-10 flex-shrink-0 ring-4 ring-gold/30">NOW</div>
+          <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          <div class="absolute left-0 top-6 md:hidden w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-bold text-xs shadow-lg">NOW</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="py-20 bg-navy">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-white">50 Years. Immeasurable Impact.</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">1972</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Year Founded</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">60K+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Children Reached</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">400+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Villages Served</div>
+        </div>
+        <div>
+          <div class="font-playfair text-5xl font-bold text-gold mb-2">50+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wide">Years of Service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-playfair text-4xl font-bold text-navy mb-4">Help Write the Next Chapter</h2>
+      <p class="text-gray-500 text-lg mb-8">The story isn't finished. With your support, Word &amp; Deed Lanka will reach the next 60,000 children.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="donate.html" class="bg-gold text-white px-8 py-4 font-bold hover:bg-gold-light transition-colors rounded-sm">Donate Today</a>
+        <a href="about.html" class="bg-navy text-white px-8 py-4 font-bold hover:bg-navy-light transition-colors rounded-sm">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
+              <span class="text-gold font-playfair font-bold text-lg">WD</span>
+            </div>
+            <div>
+              <div class="font-playfair font-bold text-white text-lg leading-none">Word &amp; Deed</div>
+              <div class="text-xs text-gold tracking-widest uppercase">Lanka</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Empowering communities across Sri Lanka through God's Word and practical action since 1972.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-instagram text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-youtube text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Our Programs</a></li>
+            <li><a href="history.html" class="hover:text-gold transition-colors">Our History</a></li>
+            <li><a href="highlights.html" class="hover:text-gold transition-colors">Highlights</a></li>
+            <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Our Programs</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Education</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Nutrition</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Leadership</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Evangelism</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Contact</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-phone text-gold mt-0.5 flex-shrink-0"></i><span>011 236 1042</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-envelope text-gold mt-0.5 flex-shrink-0"></i><span>info@wdlk.org</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-gold mt-0.5 flex-shrink-0"></i><span>Colombo Centre, Sri Lanka</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs">
+        <span>© 2025 Word &amp; Deed Lanka. All rights reserved.</span>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-gold transition-colors">Terms of Use</a>
+          <a href="#" class="hover:text-gold transition-colors">Financial Accountability</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

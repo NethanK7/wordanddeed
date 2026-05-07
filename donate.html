@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Word & Deed Lanka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0D1B2A', 'navy-light': '#162436',
+            gold: '#C8963E', 'gold-light': '#E0B060',
+            green: '#2A7A4E', 'green-light': '#348A5C',
+            cream: '#F8F5EF',
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1A1A1A; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #C8963E; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .amount-btn.selected { background: #C8963E; color: white; border-color: #C8963E; }
+    .freq-btn.selected { background: #0D1B2A; color: white; }
+    input:focus, select:focus { outline: none; border-color: #C8963E; box-shadow: 0 0 0 3px rgba(200,150,62,0.1); }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <div class="bg-navy text-white text-xs py-2 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span><i class="fas fa-phone mr-2 text-gold"></i>011 236 1042 &nbsp;|&nbsp; <i class="fas fa-envelope mr-2 text-gold"></i>info@wdlk.org</span>
+      <div class="flex items-center gap-4">
+        <a href="https://facebook.com" class="hover:text-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" class="hover:text-gold transition-colors"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
+          <span class="text-gold font-playfair font-bold text-lg">WD</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-playfair font-bold text-navy text-lg leading-none">Word &amp; Deed</div>
+          <div class="text-xs text-gold tracking-widest uppercase font-medium">Lanka</div>
+        </div>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">About Us</a></li>
+        <li><a href="projects.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Our Work</a></li>
+        <li><a href="history.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">History</a></li>
+        <li><a href="highlights.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Highlights</a></li>
+        <li><a href="contact.html" class="nav-link text-navy font-medium text-sm hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="bg-gold hover:bg-gold-light text-white px-6 py-2.5 text-sm font-semibold tracking-wide transition-colors rounded-sm">Donate Now</a>
+        <button class="lg:hidden text-navy text-xl p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t px-4 py-4">
+      <ul class="space-y-3">
+        <li><a href="index.html" class="block text-navy font-medium py-2 border-b border-gray-50">Home</a></li>
+        <li><a href="about.html" class="block text-navy font-medium py-2 border-b border-gray-50">About Us</a></li>
+        <li><a href="projects.html" class="block text-navy font-medium py-2 border-b border-gray-50">Our Work</a></li>
+        <li><a href="history.html" class="block text-navy font-medium py-2 border-b border-gray-50">History</a></li>
+        <li><a href="highlights.html" class="block text-navy font-medium py-2 border-b border-gray-50">Highlights</a></li>
+        <li><a href="contact.html" class="block text-navy font-medium py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative h-80 md:h-[500px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80')">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+    <div class="relative z-10 h-full flex items-center">
+      <div class="max-w-7xl mx-auto px-4 text-white max-w-2xl">
+        <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">Make a Difference Today</span>
+        <h1 class="font-playfair text-5xl md:text-6xl font-bold leading-tight mb-6">Your Gift<br/>Changes<br/><span class="text-gold">Everything</span></h1>
+        <p class="text-gray-200 text-lg max-w-lg">Every donation — big or small — goes directly to educating children, feeding families, training leaders, and sharing the Gospel across Sri Lanka.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Donation Section -->
+  <section class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Donation Form -->
+      <div class="bg-white rounded-lg shadow-xl p-10">
+        <h2 class="font-playfair text-3xl font-bold text-navy mb-8">Make Your Gift</h2>
+
+        <!-- Frequency -->
+        <div class="mb-8">
+          <div class="text-sm font-semibold text-navy mb-3 uppercase tracking-wide">Donation Frequency</div>
+          <div class="flex gap-3">
+            <button onclick="selectFreq('once', this)" class="freq-btn selected flex-1 py-3 border-2 border-navy rounded-sm text-sm font-semibold transition-all" id="freq-once">One-Time</button>
+            <button onclick="selectFreq('monthly', this)" class="freq-btn flex-1 py-3 border-2 border-gray-200 rounded-sm text-sm font-semibold transition-all text-gray-500 hover:border-navy" id="freq-monthly">Monthly</button>
+            <button onclick="selectFreq('annually', this)" class="freq-btn flex-1 py-3 border-2 border-gray-200 rounded-sm text-sm font-semibold transition-all text-gray-500 hover:border-navy" id="freq-annually">Annually</button>
+          </div>
+        </div>
+
+        <!-- Amount Buttons -->
+        <div class="mb-8">
+          <div class="text-sm font-semibold text-navy mb-3 uppercase tracking-wide">Select Amount (USD)</div>
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <button onclick="selectAmount(10, this)" class="amount-btn py-4 border-2 border-gray-200 rounded-sm font-bold text-navy hover:border-gold transition-all text-sm">$10</button>
+            <button onclick="selectAmount(25, this)" class="amount-btn selected py-4 border-2 border-gold rounded-sm font-bold transition-all text-sm">$25</button>
+            <button onclick="selectAmount(50, this)" class="amount-btn py-4 border-2 border-gray-200 rounded-sm font-bold text-navy hover:border-gold transition-all text-sm">$50</button>
+            <button onclick="selectAmount(100, this)" class="amount-btn py-4 border-2 border-gray-200 rounded-sm font-bold text-navy hover:border-gold transition-all text-sm">$100</button>
+            <button onclick="selectAmount(250, this)" class="amount-btn py-4 border-2 border-gray-200 rounded-sm font-bold text-navy hover:border-gold transition-all text-sm">$250</button>
+            <button onclick="selectAmount(500, this)" class="amount-btn py-4 border-2 border-gray-200 rounded-sm font-bold text-navy hover:border-gold transition-all text-sm">$500</button>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy mb-2">Or enter a custom amount</label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold">$</span>
+              <input type="number" id="customAmount" min="1" placeholder="Other amount" class="w-full pl-8 pr-4 py-3 border-2 border-gray-200 rounded-sm text-sm focus:border-gold transition-colors" oninput="clearAmountBtns()" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Direction -->
+        <div class="mb-8">
+          <label class="block text-sm font-semibold text-navy mb-3 uppercase tracking-wide">Direct Your Gift</label>
+          <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-sm text-sm transition-colors text-gray-600">
+            <option value="general">Where It's Needed Most</option>
+            <option value="education">Education Programme</option>
+            <option value="nutrition">Nutrition &amp; Hunger Relief</option>
+            <option value="leadership">Leadership Training</option>
+            <option value="evangelism">Evangelism &amp; Bible Distribution</option>
+          </select>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="space-y-4 mb-8">
+          <div class="text-sm font-semibold text-navy uppercase tracking-wide mb-2">Your Information</div>
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" placeholder="First Name" class="px-4 py-3 border-2 border-gray-200 rounded-sm text-sm transition-colors" />
+            <input type="text" placeholder="Last Name" class="px-4 py-3 border-2 border-gray-200 rounded-sm text-sm transition-colors" />
+          </div>
+          <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border-2 border-gray-200 rounded-sm text-sm transition-colors" />
+        </div>
+
+        <!-- Submit -->
+        <button onclick="handleDonate()" class="w-full bg-gold hover:bg-gold-light text-white py-5 font-bold text-lg tracking-wide transition-colors rounded-sm flex items-center justify-center gap-3">
+          <i class="fas fa-lock text-sm"></i>
+          <span id="donateBtn">Give $25 Now</span>
+        </button>
+        <div id="donateSuccess" class="hidden mt-4 bg-green/10 border border-green/30 text-green rounded-sm p-4 text-sm text-center font-semibold">
+          <i class="fas fa-check-circle mr-2"></i>Thank you! Your gift is making a difference in Sri Lanka.
+        </div>
+        <div class="flex items-center justify-center gap-6 mt-6 text-gray-400 text-xs">
+          <span class="flex items-center gap-1"><i class="fas fa-shield-alt text-gold"></i> Secure &amp; Encrypted</span>
+          <span class="flex items-center gap-1"><i class="fas fa-receipt text-gold"></i> Tax Deductible</span>
+          <span class="flex items-center gap-1"><i class="fas fa-heart text-gold"></i> 100% Goes to Programs</span>
+        </div>
+      </div>
+
+      <!-- Impact Info -->
+      <div>
+        <span class="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">Your Gift At Work</span>
+        <h2 class="font-playfair text-4xl font-bold text-navy mb-6">What Your Gift Provides</h2>
+        <div class="space-y-5 mb-12">
+          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-playfair font-bold text-gold">$10</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-navy mb-1">Provides a week of meals</h4>
+              <p class="text-gray-500 text-sm">A $10 gift feeds a child at our learning centres for one full week — ensuring they can focus and learn.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-playfair font-bold text-green">$25</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-navy mb-1">Sends 5 Bibles to rural communities</h4>
+              <p class="text-gray-500 text-sm">A $25 gift puts the Word of God into the hands of five families — in their own language — for the very first time.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <span class="font-playfair font-bold text-blue-600">$50</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-navy mb-1">Sponsors a month of education</h4>
+              <p class="text-gray-500 text-sm">A $50 gift covers a month of schooling for a child — tuition, materials, and a Christian values-based curriculum.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0">
+              <span class="font-playfair font-bold text-amber-600">$100</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-navy mb-1">Funds a community outreach event</h4>
+              <p class="text-gray-500 text-sm">A $100 gift resources a village outreach — bringing the Gospel and practical care to an entire community in one day.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-playfair font-bold text-navy">$250</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-navy mb-1">Trains a community leader</h4>
+              <p class="text-gray-500 text-sm">A $250 gift sponsors a leader through our discipleship programme — equipping one person to transform a community.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="bg-navy rounded-lg p-8">
+          <h3 class="font-playfair text-xl font-bold text-white mb-6">Our Commitment to You</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>
+              <p class="text-gray-300 text-sm">100% of program-designated gifts go directly to the field — no overhead deductions.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>
+              <p class="text-gray-300 text-sm">Registered as a Social Service Organisation with the Government of Sri Lanka since 1985.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>
+              <p class="text-gray-300 text-sm">Audited annually and fully financially transparent — see our accountability report on request.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-gold mt-0.5 flex-shrink-0"></i>
+              <p class="text-gray-300 text-sm">You'll receive a gift receipt and regular updates on how your support is making a difference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Break -->
+  <section class="relative h-64 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1501862700950-18382cd41497?w=1920&q=80')">
+    <div class="absolute inset-0 bg-navy/80"></div>
+    <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
+      <div>
+        <p class="font-playfair text-2xl md:text-3xl italic text-white mb-4">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
+        <p class="text-gold tracking-widest uppercase text-sm">2 Corinthians 9:7</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Ways to Give -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-playfair text-3xl font-bold text-navy mb-4">Other Ways to Give</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Giving doesn't have to mean writing a cheque. Here are other ways to partner with us in the work.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-church text-gold text-xl"></i>
+          </div>
+          <h3 class="font-playfair text-xl font-bold text-navy mb-3">Church Partnership</h3>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Mobilise your church to pray, give, and partner with Word &amp; Deed Lanka. We provide resources and speaking engagements.</p>
+          <a href="contact.html" class="text-gold text-sm font-semibold hover:underline">Contact Us →</a>
+        </div>
+        <div class="bg-white rounded-lg p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-hand-holding-usd text-green text-xl"></i>
+          </div>
+          <h3 class="font-playfair text-xl font-bold text-navy mb-3">Bank Transfer</h3>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Prefer to give directly? Contact us for our bank account details to make a local or international transfer.</p>
+          <a href="contact.html" class="text-green text-sm font-semibold hover:underline">Get Bank Details →</a>
+        </div>
+        <div class="bg-white rounded-lg p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-users text-navy text-xl"></i>
+          </div>
+          <h3 class="font-playfair text-xl font-bold text-navy mb-3">Fundraise For Us</h3>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Host a fundraising event, birthday campaign, or workplace giving drive to rally your community for Sri Lanka.</p>
+          <a href="contact.html" class="text-navy text-sm font-semibold hover:underline">Start Fundraising →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
+              <span class="text-gold font-playfair font-bold text-lg">WD</span>
+            </div>
+            <div>
+              <div class="font-playfair font-bold text-white text-lg leading-none">Word &amp; Deed</div>
+              <div class="text-xs text-gold tracking-widest uppercase">Lanka</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">Empowering communities across Sri Lanka through God's Word and practical action since 1972.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-instagram text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold flex items-center justify-center transition-colors"><i class="fab fa-youtube text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Our Programs</a></li>
+            <li><a href="history.html" class="hover:text-gold transition-colors">Our History</a></li>
+            <li><a href="highlights.html" class="hover:text-gold transition-colors">Highlights</a></li>
+            <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Our Programs</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Education</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Nutrition</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Leadership</a></li>
+            <li><a href="projects.html" class="hover:text-gold transition-colors">Evangelism</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide uppercase text-sm">Contact</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-phone text-gold mt-0.5 flex-shrink-0"></i><span>011 236 1042</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-envelope text-gold mt-0.5 flex-shrink-0"></i><span>info@wdlk.org</span></li>
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-gold mt-0.5 flex-shrink-0"></i><span>Colombo Centre, Sri Lanka</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs">
+        <span>© 2025 Word &amp; Deed Lanka. All rights reserved.</span>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-gold transition-colors">Terms of Use</a>
+          <a href="#" class="hover:text-gold transition-colors">Financial Accountability</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let selectedAmount = 25;
+
+    function selectAmount(amount, btn) {
+      selectedAmount = amount;
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('customAmount').value = '';
+      updateDonateBtn();
+    }
+
+    function clearAmountBtns() {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+      const custom = document.getElementById('customAmount').value;
+      selectedAmount = custom || 0;
+      updateDonateBtn();
+    }
+
+    function selectFreq(type, btn) {
+      document.querySelectorAll('.freq-btn').forEach(b => {
+        b.classList.remove('selected');
+        b.classList.add('text-gray-500');
+        b.style.borderColor = '';
+      });
+      btn.classList.add('selected');
+      btn.classList.remove('text-gray-500');
+      updateDonateBtn();
+    }
+
+    function updateDonateBtn() {
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom || selectedAmount;
+      document.getElementById('donateBtn').textContent = `Give $${amt} Now`;
+    }
+
+    function handleDonate() {
+      document.getElementById('donateSuccess').classList.remove('hidden');
+      setTimeout(() => document.getElementById('donateSuccess').classList.add('hidden'), 8000);
+    }
+  </script>
+</body>
+</html>
